@@ -1,9 +1,17 @@
-import example.pepita
+import criaturas.*
+import roles.*
 
-describe "group of tests for pepita" {
+test "crear nueva hada con algo de energia"{
+  const roberto = new Hadas(poderMagico = 100)
+  assert.equals(100, roberto.poderMagico())
+}
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
+test "calcular el poder ofensivo de una hada en base a su rol"{
+  const julia = new Hadas(poderMagico = 20, rol = guardian)
+  assert.equals(300, julia.poderOfensivo())
+}
 
+test "calcular poder ofensivo duende"{
+  const robertito = new Duendes(poderMagico = 10, rol = guardian)
+  assert.equals(220, robertito.poderOfensivo())
 }
