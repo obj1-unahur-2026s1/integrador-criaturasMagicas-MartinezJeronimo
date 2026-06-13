@@ -15,3 +15,20 @@ test "calcular poder ofensivo duende"{
   const robertito = new Duendes(poderMagico = 10, rol = guardian)
   assert.equals(220, robertito.poderOfensivo())
 }
+
+test "la nueva hada es astuta?" {
+  const jose = new Hadas(astucia= 70)
+  assert.equals(true, jose.esAstuta())
+}
+
+test "la hada es formidable?" {
+  const hadita = new Hadas(poderMagico = 60, rol = guardian, astucia = 20, kilometrosDeVuelo = 23)
+  assert.equals(true, hadita.esFormidable())
+}
+
+test "julia es formidable?2.0" {
+  const julia = new Hadas(poderMagico = 20, rol = domador, kilometrosDeVuelo = 23)
+  julia.ingresarMascota(35, true)
+  julia.ingresarMascota(27, true)
+  assert.equals(true, julia.esFormidable())
+}
