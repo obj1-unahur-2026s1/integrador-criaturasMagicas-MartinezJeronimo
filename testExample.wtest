@@ -1,3 +1,4 @@
+import mascotas.*
 import criaturas.*
 import roles.*
 
@@ -28,7 +29,20 @@ test "la hada es formidable?" {
 
 test "julia es formidable?2.0" {
   const julia = new Hadas(poderMagico = 20, rol = domador, kilometrosDeVuelo = 23)
-  julia.ingresarMascota(35, true)
-  julia.ingresarMascota(27, true)
+  julia.ingresarMascota(35, true, magica)
+  julia.ingresarMascota(27, true, magica)
   assert.equals(true, julia.esFormidable())
+}
+
+test "jorge se vuelve domador" {
+  const jorge = new Duendes(poderMagico = 123, rol = guardian)
+  jorge.ritualCambioRol()
+  assert.equals(domador, jorge.rol())
+}
+
+test "jorge pasa de domado a hechizero" {
+  const jorge = new Duendes(poderMagico = 1234, rol = domador)
+  jorge.ingresarMascota(1, false, magica)
+  jorge.ritualCambioRol()
+  assert.equals(hechizero, jorge.rol())
 }

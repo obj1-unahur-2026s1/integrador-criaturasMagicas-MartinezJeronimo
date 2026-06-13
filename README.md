@@ -40,7 +40,7 @@ Además de tener un rol extraordinario las Hada necesitan una condicion adiciona
 
 ### Ritual de Cambio de Rol
 
-Sabemos que cada criatura tiene un único rol, pero si se sienten aburridas pueden cambiarlo. El ritual consisete en pasar de un rol a otro tenniendo en cuenta las siguientes consideraciones.
+Sabemos que cada criatura tiene un único rol, pero si se sienten aburridas pueden cambiarlo. El ritual consiste en pasar de un rol a otro tenniendo en cuenta las siguientes consideraciones.
 - Si actualmente tiene el rol guardián unicamente puede pasar a rol domador con una nueva mascota mítologica de 1 año de edad y sin cuernos.
 - Si tiene el rol hechicero solo puede pasar al rol guardían.
 - Si tiene el rol domador puede pasar a Hechizero si tiene al menos una mascota magica con cuernos y en caso contarario se produce un error en el ritual que lo cancela.
