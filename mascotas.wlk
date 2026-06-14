@@ -1,7 +1,7 @@
 class Mascota {
-    var edad = 0
-    var tieneCuernos = false
-    var tipoMascota = magica
+    const edad = 0
+    const tieneCuernos = false
+    const tipoMascota = magica
 
     method edad() = edad
     method tieneCuernos() = tieneCuernos

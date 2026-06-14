@@ -1,14 +1,15 @@
+import parque.*
 import roles.*
 import mascotas.*
 
 class Criatura{
-    var poderMagico = 10
+    const poderMagico = 10
     var rol = null
-    var reinoPerteneciente = null
-    var astucia = 0
-    var mascotas = []
+    const coloniaPerteneciente = null
+    const astucia = 0
+    const mascotas = []
 
-    method reinoPerteneciente() = reinoPerteneciente
+    method coloniaPerteneciente() = coloniaPerteneciente
     method poderMagico() = poderMagico
     method astucia() = astucia
     method esAstuta() = false
@@ -28,27 +29,14 @@ class Criatura{
     method cambiarRol(otroRol) {rol = otroRol}
 }
 
-class Hadas inherits Criatura{
+class Hada inherits Criatura{
     var property kilometrosDeVuelo = 2
 
-    override method reinoPerteneciente() = Cielos 
     override method esAstuta() = self.astucia() > 50
     override method esFormidable() = self.esAstuta() or (self.esExtraordinario() and self.kilometrosDeVuelo() > 10)
 }
 
-class Duendes inherits Criatura{
-    override method reinoPerteneciente() = Bosque
+class Duende inherits Criatura{
     override method poderOfensivo() = (poderMagico * 10 + self.rol().elPoderExtra()) * 1.10
-}
-
- class Reinos {
-
- }
-
-class Cielos inherits Reinos {
-
-}
-
-class Bosque inherits Reinos {
-
+    override method esFormidable() = self.esExtraordinario()
 }

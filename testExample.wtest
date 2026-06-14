@@ -1,48 +1,62 @@
+import parque.*
 import mascotas.*
 import criaturas.*
 import roles.*
 
 test "crear nueva hada con algo de energia"{
-  const roberto = new Hadas(poderMagico = 100)
+  const roberto = new Hada(poderMagico = 100)
   assert.equals(100, roberto.poderMagico())
 }
 
 test "calcular el poder ofensivo de una hada en base a su rol"{
-  const julia = new Hadas(poderMagico = 20, rol = guardian)
+  const julia = new Hada(poderMagico = 20, rol = guardian)
   assert.equals(300, julia.poderOfensivo())
 }
 
 test "calcular poder ofensivo duende"{
-  const robertito = new Duendes(poderMagico = 10, rol = guardian)
+  const robertito = new Duende(poderMagico = 10, rol = guardian)
   assert.equals(220, robertito.poderOfensivo())
 }
 
 test "la nueva hada es astuta?" {
-  const jose = new Hadas(astucia= 70)
+  const jose = new Hada(astucia= 70)
   assert.equals(true, jose.esAstuta())
 }
 
 test "la hada es formidable?" {
-  const hadita = new Hadas(poderMagico = 60, rol = guardian, astucia = 20, kilometrosDeVuelo = 23)
+  const hadita = new Hada(poderMagico = 60, rol = guardian, astucia = 20, kilometrosDeVuelo = 23)
   assert.equals(true, hadita.esFormidable())
 }
 
 test "julia es formidable?2.0" {
-  const julia = new Hadas(poderMagico = 20, rol = domador, kilometrosDeVuelo = 23)
+  const julia = new Hada(poderMagico = 20, rol = domador, kilometrosDeVuelo = 23)
   julia.ingresarMascota(35, true, magica)
   julia.ingresarMascota(27, true, magica)
   assert.equals(true, julia.esFormidable())
 }
 
 test "jorge se vuelve domador" {
-  const jorge = new Duendes(poderMagico = 123, rol = guardian)
+  const jorge = new Duende(poderMagico = 123, rol = guardian)
   jorge.ritualCambioRol()
   assert.equals(domador, jorge.rol())
 }
 
 test "jorge pasa de domado a hechizero" {
-  const jorge = new Duendes(poderMagico = 1234, rol = domador)
+  const jorge = new Duende(poderMagico = 1234, rol = domador)
   jorge.ingresarMascota(1, false, magica)
   jorge.ritualCambioRol()
   assert.equals(hechizero, jorge.rol())
+}
+
+test "Los del castillo son formidables?" {
+  const mauricio = new Duende(poderMagico = 57, rol = guardian, astucia = 40, coloniaPerteneciente = losCastillos)
+  const jorge = new Duende(poderMagico = 80, rol = domador, astucia = 50, coloniaPerteneciente = losCastillos)
+  const javier = new Duende(poderMagico = 15, rol = hechizero, astucia = 60, coloniaPerteneciente = losCastillos)
+  
+  losCastillos.ingresarHabitante(mauricio)
+  losCastillos.ingresarHabitante(jorge)
+  losCastillos.ingresarHabitante(javier)
+  
+  assert.equals(2, losCastillos.habitantesFormidables())
+
 }
